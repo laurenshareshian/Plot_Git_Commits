@@ -17,6 +17,7 @@ words=[]
 for i in range(len(data)):
     months.append(int(data[i]['commit']['committer']['date'][5:7]))
     days.append(int(data[i]['commit']['committer']['date'][8:10]))
+    print(data[i]['commit']['committer']['date'])
     newformat = map(int, data[i]['commit']['committer']['date'].split("T")[0].split("-"))
     weekdays.append(date.weekday(date(*newformat)))
     for word in data[i]['commit']['message'].split():
